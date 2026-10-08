@@ -113,4 +113,3 @@ O **UDP** é um protocolo **sem conexão** e **focado na velocidade máxima**. E
 
 ---
 
-💡 Gostaria que eu elaborasse alguns **flashcards de memorização** focados nas portas lógicas do TCP/UDP ou prefere resolver um **mini-simulado de 3 questões** sobre a Camada de Transporte?
