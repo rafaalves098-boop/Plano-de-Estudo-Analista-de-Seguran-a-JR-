@@ -113,3 +113,92 @@ O **UDP** é um protocolo **sem conexão** e **focado na velocidade máxima**. E
 
 ---
 
+### O que acontece, do ponto de vista de rede, quando você digita "google.com" no navegador?
+
+Do ponto de vista de rede, a navegação até o `google.com` ocorre em **5 etapas principais**:
+
+1. **Tradução do Nome (DNS):** O navegador envia uma requisição via **UDP na porta 53** para o servidor DNS converter o nome "google.com" no endereço IP numérico correspondente do servidor.
+2. **Localização do Gateway (ARP):** O computador utiliza o protocolo **ARP** na rede local para descobrir o endereço físico (MAC) do roteador/gateway padrão e enviar os pacotes em direção à internet.
+3. **Abertura da Conexão TCP (*Three-Way Handshake*):** É criada uma sessão de transporte confiável na **porta 443** através do aperto de mão em três vias (troca das mensagens `SYN`, `SYN-ACK` e `ACK`) entre o cliente e o servidor.
+4. **Criptografia e Segurança (TLS/SSL):** Como se trata de uma conexão **HTTPS**, o navegador valida o certificado digital do servidor e estabelece um túnel criptografado para garantir a confidencialidade e a integridade dos dados.
+5. **Requisição HTTP e Resposta:** O navegador faz o pedido (`GET`) da página inicial e o servidor responde enviando o conteúdo (HTML, CSS e scripts) para renderização na sua tela.
+
+---
+
+### 📑 Fontes Identificadas no Projeto
+
+* **Guia de estudo.pdf:** Detalha a consulta e resolução de nomes no servidor DNS, a resolução do endereço MAC do gateway padrão utilizando o protocolo ARP, o estabelecimento da conexão de transporte TCP via *Three-Way Handshake* (mensagens SYN, SYN-ACK e ACK) e o envio de requisições HTTP GET na porta 443.
+* **cartilha-seguranca-internet.pdf:** Fornece os conceitos de segurança em conexões web via HTTPS, abordando o uso de criptografia TLS/SSL e validação de certificados digitais para garantir a confidencialidade e integridade das informações.
+* **Exemplo de Modelo de Aprendizado (CompTIA Security+ Full Guide):** Define as portas lógicas padrão dos protocolos envolvidos, especificando a porta UDP 53 para o serviço de DNS e a porta TCP 443 para o tráfego HTTPS.
+* **GitHub - vaamonde/ccna-v7-200-301:** Apresenta o funcionamento prático de servidores DNSv4, servidores web HTTP/HTTPS e o roteamento de pacotes na infraestrutura de rede.
+* **CompTIA Security+ PDF PT|BR Marilia Rocha:** Conceitua o Domain Name System (DNS) como a estrutura responsável por traduzir nomes de domínio em endereços IP para comunicação entre computadores.
+
+---
+
+### Qual é a diferença entre uma Vulnerabilidade, uma Ameaça e um Risco?
+
+No contexto da segurança da informação e da cibersegurança, **Vulnerabilidade**, **Ameaça** e **Risco** são conceitos distintos que se complementam para determinar o nível de exposição de um ativo:
+
+1. **Vulnerabilidade (*Vulnerability*):**
+   * **O que é:** Uma fraqueza, falha, limitação ou ausência de controle em um sistema, software, hardware, processo organizacional ou comportamento humano.
+   * **Exemplos:** Um sistema operacional desatualizado sem correções de segurança (*patches*), uma senha fraca, uma porta de rede desnecessariamente aberta ou a falta de treinamento de um funcionário.
+
+2. **Ameaça (*Threat*):**
+   * **O que é:** Qualquer agente, evento ou ocorrência potencial (humana, tecnológica ou natural) que possui a capacidade de causar dano ou explorar uma fraqueza.
+   * **Exemplos:** Um cibercriminoso, um código malicioso (*ransomware*, *trojan*), um desastre natural (enchente, terremoto) ou um funcionário negligente.
+
+3. **Risco (*Risk*):**
+   * **O que é:** A probabilidade ou possibilidade de uma **ameaça** concretizar-se ao explorar uma **vulnerabilidade** existente, gerando um impacto negativo ou perda para a organização.
+   * **Fórmula do Risco:** \\(\text{Risco} = \text{Probabilidade (ou Frequência)} \times \text{Impacto}\\).
+
+---
+
+#### 💡 Exemplo Prático Integrado:
+* **Ativo:** O servidor do banco de dados corporativo.
+* **Vulnerabilidade:** O servidor está rodando uma versão antiga de software com uma falha conhecida de *SQL Injection*.
+* **Ameaça:** Um hacker realizando varreduras na internet em busca de alvos vulneráveis.
+* **Risco:** A probabilidade de o hacker localizar a aplicação, explorar a falha de *SQL Injection* e roubar os dados confidenciais, causando prejuízo financeiro e danos à reputação da empresa.
+
+---
+
+### 📑 Fontes Identificadas no Projeto
+
+* **CompTIA Security+ PDF PT|BR Marilia Rocha:** Apresenta a definição direta dos três termos, caracterizando vulnerabilidade como falha ou limitação de controle, ameaça como ocorrência potencial indesejada e risco como a probabilidade de exploração dessa vulnerabilidade.
+* **Exemplo de Modelo de Aprendizado (CompTIA Security+ SY0-701 Full Learning Guide):** Mapeia a relação causal entre Ativo, Ameaça, Vulnerabilidade e Risco, apresentando a fórmula quantitativa e qualitativa de avaliação de riscos (\\(\text{Risco} = \text{Probabilidade} \times \text{Impacto}\\)).
+* **Guia de estudo.pdf:** Define vulnerabilidade como a ausência ou fraqueza de uma contramedida (em software, hardware ou pessoal) e detalha as etapas de avaliação de vulnerabilidades.
+* **cartilha-seguranca-internet.pdf:** Conceitua vulnerabilidade como qualquer condição de projeto, implementação ou configuração de equipamentos e sistemas que pode ser explorada por um atacante.
+
+---
+
+### O que é um "Falso Positivo" e um "Falso Negativo"? Qual é o mais perigoso?
+
+Em segurança cibernética, a diferença entre esses dois conceitos está no resultado da detecção em relação à presença real de uma ameaça:
+
+#### 1. Falso Positivo (*False Positive*)
+Um **Falso Positivo** ocorre quando um mecanismo ou ferramenta de segurança (como um firewall, IDS ou antivírus) emite um alerta indicando uma ameaça em uma atividade, arquivo ou tráfego que, na realidade, é **inofensivo e legítimo**. Trata-se de um "alarme falso" em que o sistema detectou algo (positivo), mas a avaliação estava errada (falsa).
+* **Exemplo:** Um antivírus que bloqueia a instalação de um software corporativo seguro ou um filtro de e-mail que envia uma mensagem legítima para a caixa de spam.
+
+#### 2. Falso Negativo (*False Negative*)
+Um **Falso Negativo** ocorre quando um ataque cibernético, malware ou comportamento malicioso real passa **completamente despercebido** pelos sistemas de proteção. Nesse cenário, a ferramenta interpreta o ambiente como limpo/seguro (negativo), mas essa avaliação é incorreta (falsa).
+* **Exemplo:** Um ransomware que consegue se infiltrar e criptografar arquivos da rede sem disparar nenhum alerta nas ferramentas de monitoramento.
+
+---
+
+### ⚠️ Qual é o mais perigoso?
+
+O **Falso Negativo é incomparavelmente mais perigoso**.
+
+* Em um **Falso Positivo**, o maior impacto costuma ser o desperdício de tempo e recursos da equipe de resposta investigando alertas inexistentes, além do inconveniente de ajustar a sensibilidade das regras de monitoramento para reduzir alarmes falsos.
+* Em um **Falso Negativo**, a organização fica sob uma **falsa sensação de segurança** enquanto uma ameaça real atua dentro do ambiente. O invasor ganha tempo para realizar movimentação lateral, exfiltrar dados confidenciais ou interromper operações críticas sem que a equipe de segurança saiba que o ataque está acontecendo.
+
+---
+
+### 📑 Fontes Identificadas no Projeto
+
+* **cartilha-seguranca-internet.pdf:** Conceitua o **falso positivo** como um alarme falso no qual um mecanismo de segurança aponta uma atividade como maliciosa ou anômala quando se trata de uma ação totalmente legítima.
+* **Questões CompTIA Security+ (Vídeo/Transcrição YouTube):** Explica detalhadamente a lógica do **falso positivo** (detecção incorreta de ameaça inexistente) e do **falso negativo** (falha grave de detecção em que uma ameaça real passa despercebida), destacando o risco crítico do falso negativo para as organizações.
+* **NIST Cybersecurity Framework CSF 2.0 Core.pdf:** Aborda a importância da calibração e definição de critérios de incidentes para reduzir os falsos positivos e direcionar a atenção da equipe de segurança para eventos adversos genuínos.
+* **Materoal de suporte.pdf:** Apresenta a classificação de taxas de detecção (falsos positivos e falsos negativos) nas avaliações e no monitoramento de sistemas de segurança.
+* **CompTIA Security+ PDF PT|BR Marilia Rocha:** Analisa cenários práticos de auditoria e varredura de vulnerabilidades em que a interpretação incorreta de logs ou relatórios gera situações de falso positivo e falso negativo.
+
+---
