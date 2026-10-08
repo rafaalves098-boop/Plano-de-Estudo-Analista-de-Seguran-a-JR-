@@ -105,7 +105,7 @@ O **UDP** é um protocolo **sem conexão** e **focado na velocidade máxima**. E
 
 ---
 
-### 📑 Fontes Identificadas no Projeto
+### 📑 Fontes Utilizadas para as respostas acima:
 
 * **Guia de estudo.pdf:** Apresenta a fundamentação teórica da Camada de Transporte dos modelos OSI e DoD, detalhando o funcionamento do *three-way handshake*, a analogia comparativa da ligação telefônica versus cartão-postal, o sequenciamento de pacotes e o controle de fluxo via janelas.
 * **Exemplo de Modelo de Aprendizado:** Fornece o mapeamento de portas lógicas e a associação prática das aplicações e serviços aos protocolos TCP e UDP exigidos no exame CompTIA Security+.
