@@ -605,15 +605,8 @@ https://notebook.google.com/notebook/00ddc520-50e6-410e-b55d-4003d9c56110
 
 ---
 
-<br>
 
-**Padrão adotado no Tópico 3 (Perguntas e Respostas):**
 
-1. **Pergunta**
-2. **Resposta**
-3. **Explicação Conceitual em Seções Numeradas**
-4. **Exemplo Prático (quando aplicável)**
-5. **Ponto Importante para a Security+**
-6. **Fontes Identificadas no Projeto**
+
 
 Esse padrão garante uniformidade, facilita revisões rápidas e torna o conteúdo mais adequado para estudos, consultas futuras e preparação para certificações.
