@@ -55,3 +55,36 @@ Abaixo está a relação completa de todas as **22 fontes** integradas ao projet
 ### 📝 Textos e Notas
 
 1. **Objetivo Principal do Professor de TI** *Prompt e diretrizes de mentoria para estruturação de planos de estudo personalizados voltados a analistas júniores.*
+
+2. # Tópico 3: Perguntas e respostas
+
+**Pergunta:** Qual é a diferença entre TCP e UDP?
+
+**Resposta:**
+
+O **TCP (Transmission Control Protocol)** e o **UDP (User Datagram Protocol)** são os dois principais protocolos que operam na Camada de Transporte (camada *Host-to-Host* do modelo TCP/IP)[1]. A diferença fundamental entre eles reside na confiabilidade, no estabelecimento de conexão e na quantidade de *overhead* de processamento e rede exigida durante a transmissão de dados[4].
+
+---
+
+### 1\. Transmission Control Protocol (TCP)
+
+* **Orientado à Conexão (** **Connection-oriented** **):** Estabelece um circuito virtual e confirma a comunicação entre a origem e o destino por meio de um aperto de mão de três vias (*three-way handshake*) antes do envio de dados[6].
+* **Confiabilidade e Ordenação (** **Reliable &amp; Sequenced** **):** Garante a entrega exata da informação dividindo o fluxo em segmentos numerados, exigindo confirmações de recebimento (*acknowledgments* ou ACKs), retransmitindo pacotes perdidos e aplicando controle de fluxo (*windowing*) para evitar a sobrecarga do receptor[6].
+* **Overhead de Rede:** Por conter um cabeçalho mais complexo e gerenciar o estado da sessão, gera um **maior overhead** de banda e processamento[4].
+* **Aplicações Típicas:** Utilizado por serviços que exigem integridade absoluta dos dados, como **HTTP (porta 80), HTTPS (porta 443), SSH (porta 22), FTP (portas 20/21), Telnet (porta 23) e SMTP (porta 25)**[13][14].
+
+---
+
+### 2\. User Datagram Protocol (UDP)
+
+* **Sem Conexão (** **Connectionless** **):** Transmite os pacotes diretamente ao destino sem criar sessões prévias ou realizar contato de preparação[5].
+* **Não Confiável e Não Sequenciado (** **Unreliable &amp; Unsequenced** **):** Não atribui números de sequência, não exige confirmações de recebimento e não realiza controle de fluxo ou retransmissão[6].
+* **Baixo Overhead:** Por ser um protocolo leve (*thin protocol*), economiza recursos de rede e proporciona transmissões **mais rápidas e com menor latência**, sendo ideal para tráfego em tempo real, como VoIP e chamadas de vídeo[4].
+* **Aplicações Típicas:** Utilizado por **TFTP (porta 69), DHCP (portas 67/68), SNMP (porta 161) e NTP (porta 123)**[13]. O **DNS (porta 53)** pode alternar entre TCP e UDP conforme o tipo de operação realizada[14].
+
+---
+
+### 📑 Fontes Identificadas no Projeto
+
+* **Guia de estudo.pdf:** Apresenta a fundamentação teórica da Camada de Transporte, detalhando a estrutura de cabeçalho do TCP/UDP, o processo de *three-way handshake*, janelas de controle de fluxo e a tabela comparativa de características operacionais dos dois protocolos[1].
+* **Exemplo de Modelo de Aprendizado:** Contém o mapeamento prático de portas lógicas e a atribuição de serviços e protocolos aos canais TCP e UDP para o exame CompTIA Security+[13].
