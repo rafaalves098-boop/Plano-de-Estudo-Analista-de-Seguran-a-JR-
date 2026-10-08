@@ -10,7 +10,7 @@ O **Gemini Notebook — Plano de Estudo Analista de Segurança JR** é um assist
 * **Análise de Cenários e Logs:** Identificação de vetores de ataque em logs de servidores e firewalls (**SQL Injection, XSS, Directory Traversal**) e interpretação de evidências.
 * **Estratégias de Exame:** Orientação sobre a dinâmica de questões baseadas em desempenho (**PBQs**), gestão de tempo e priorização durante a prova.
 * **Geração de Conteúdo:** Elaboração de planos de estudo, resumos executivos, simulados e flashcards.
-## Fontes
+## 2\. Fontes
 
 Abaixo está a relação completa de todas as **22 fontes** integradas ao projeto, organizadas por formato e com uma breve síntese de seu conteúdo:
 
